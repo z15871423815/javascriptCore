@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style></style>
+ </head>
+ <body>
+  <script>
+		var str="那天，我去了她家。我说:我草，你家真大。她想和我去草地野餐。我草草的收拾了草地。她说: 我去去就来";
+		//我去,我草,我去草,我去去,我草草
+		//我[去草][去草]?
+		str=str.replace(
+			/我[去草][去草]?/g,
+			function(kword){//每找到一个关键词都自动调用一次
+				//每次调用时都自动获得本次找到的关键词kword
+				return kword.length==2?"**":"***"
+			}
+		)
+		console.log(str);
+	</script>
+ </body>
+</html>
