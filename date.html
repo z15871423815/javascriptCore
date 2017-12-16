@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+		<h1 id="show"></h1>
+		<script>
+			function task(){
+			var now=new Date();
+			var target=new Date("2018-1-1 00:00");
+			var s=parseInt((target.getTime()-now.getTime())/1000);//"总毫秒"
+			var d=parseInt(s/(3600*24));
+			var h=parseInt((s%(3600*24))/3600);;
+			var m=parseInt((s%3600)/60);
+			var s=s%60;
+			show.innerHTML=("距平安夜还有"+d+"天"+h+"小时"+m+"分"+s+"秒");
+			}
+			setInterval(task,1000);
+		</script>
+ </body>
+</html>
